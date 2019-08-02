@@ -22,6 +22,8 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 mix_gen_release_config-*.tar
 
+.elixir_ls
+
 # VIM
 # swap
 [._]*.s[a-v][a-z]

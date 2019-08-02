@@ -1,9 +1,9 @@
-defmodule MixGenUmbrellaConfig.MixProject do
+defmodule MixGenReleaseConfig.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :mix_gen_umbrella_config,
+      app: :mix_gen_release_config,
       version: "0.1.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
