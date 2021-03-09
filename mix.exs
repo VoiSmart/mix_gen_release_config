@@ -19,7 +19,7 @@ defmodule MixGenReleaseConfig.MixProject do
 
   defp deps do
     [
-      {:credo, "~> 1.0", only: [:dev, :test]}
+      {:credo, "~> 1.5", only: [:dev, :test]}
     ]
   end
 end
