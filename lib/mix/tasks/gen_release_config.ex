@@ -15,12 +15,20 @@ defmodule Mix.Tasks.Gen.Release.Config do
   """
 
   @impl true
-  def run([config_file]) do
+  def run(args) do
+    {options, [config_file], _invalid} = OptionParser.parse(args, strict: [output: :string])
+
+    outfile =
+      case options do
+        [output: outfile] -> outfile
+        _ -> @release_config_path
+      end
+
     {config, _paths} = Reader.read_imports!(config_file)
     content = rebuild_config(config)
-    :ok = File.write!(@release_config_path, content)
+    :ok = File.write!(outfile, content)
 
-    maybe_format(@release_config_path)
+    maybe_format(outfile)
   end
 
   defp maybe_format(path) do
